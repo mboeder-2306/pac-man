@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
   //move pacman
   function movePacman(e) {
     squares[pacmanCurrentIndex].classList.remove('pac-man')
-    switch(e.keyCode) {
-      case 37:
+    switch(e.key) {
+      case 'ArrowLeft':
         if(
           pacmanCurrentIndex % width !== 0 &&
           !squares[pacmanCurrentIndex -1].classList.contains('wall') &&
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
           pacmanCurrentIndex = 391
         }
         break
-      case 38:
+      case 'ArrowUp':
         if(
           pacmanCurrentIndex - width >= 0 &&
           !squares[pacmanCurrentIndex -width].classList.contains('wall') &&
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ) 
         pacmanCurrentIndex -= width
         break
-      case 39:
+      case 'ArrowRight':
         if(
           pacmanCurrentIndex % width < width - 1 &&
           !squares[pacmanCurrentIndex +1].classList.contains('wall') &&
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
           pacmanCurrentIndex = 364
         }
         break
-      case 40:
+      case 'ArrowDown':
         if (
           pacmanCurrentIndex + width < width * width &&
           !squares[pacmanCurrentIndex +width].classList.contains('wall') &&
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkForGameOver()
     checkForWin()
   }
-  document.addEventListener('keyup', movePacman)
+  document.addEventListener('keydown', movePacman)
 
   // what happens when you eat a pac-dot
   function pacDotEaten() {
@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (squares[pacmanCurrentIndex].classList.contains('ghost') &&
       !squares[pacmanCurrentIndex].classList.contains('scared-ghost')) {
       ghosts.forEach(ghost => clearInterval(ghost.timerId))
-      document.removeEventListener('keyup', movePacman)
+      document.removeEventListener('keydown', movePacman)
       setTimeout(function(){ alert("Game Over"); }, 500)
     }
   }
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function checkForWin() {
     if (score === 274) {
       ghosts.forEach(ghost => clearInterval(ghost.timerId))
-      document.removeEventListener('keyup', movePacman)
+      document.removeEventListener('keydown', movePacman)
       setTimeout(function(){ alert("You have WON!"); }, 500)
     }
   }
