@@ -44,3 +44,10 @@ The above copyright notice and this permission notice shall be included in all c
 *Translation: Ofcourse you can use this for you project! Just make sure to say where you got this from :)
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+### Modifications by me (mboeder-2306)
+Thanks Ania Kubow for this nice and easy to understand Pac-Man-Tutorial!
+
+I did a couple of little modifications, and for one of these you have to run this code on an live-server instance. For local Development i would recommend you use: 
+https://marketplace.visualstudio.com/items?itemName=yandeu.five-server for VSCode. After you installed it, you get an "Go Live" Button at the Buttom of VSCode. If you click on it, it spawns you such an instance with ease.
